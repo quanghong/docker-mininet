@@ -1,7 +1,7 @@
 ```bash
 docker build --file Dockerfile --tag quanghong/mininet:ubuntu-22.04 . &> build.log
 ```
-
+```bash
 root@dca30c46790c:~# mn --switch ovsbr --test pingall
 *** Error setting resource limits. Mininet's performance may be affected.
 *** Creating network
@@ -34,8 +34,9 @@ s1
 h1 h2 
 *** Done
 completed in 0.535 seconds
-root@dca30c46790c:~# h1 ping h2
-bash: h1: command not found
+```
+
+```bash
 root@dca30c46790c:~# mn
 *** Error setting resource limits. Mininet's performance may be affected.
 *** Creating network
@@ -92,3 +93,4 @@ s1
 h1 h2 
 *** Done
 completed in 73.873 seconds
+```
