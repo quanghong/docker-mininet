@@ -1,33 +1,7 @@
-ubuntu@ubuntu:~/docker-mininet/ubuntu-22.04$ docker build --file Dockerfile --tag quanghong/mininet:ubuntu-22.04 .
-[+] Building 14.9s (10/10) FINISHED                                                              docker:default
- => [internal] load build definition from Dockerfile                                                       0.0s
- => => transferring dockerfile: 502B                                                                       0.0s
- => [internal] load metadata for docker.io/library/ubuntu:22.04                                            0.6s
- => [auth] library/ubuntu:pull token for registry-1.docker.io                                              0.0s
- => [internal] load .dockerignore                                                                          0.0s
- => => transferring context: 2B                                                                            0.0s
- => [1/4] FROM docker.io/library/ubuntu:22.04@sha256:0e5e4a57c2499249aafc3b40fcd541e9a456aab7296681a3994d  0.0s
- => [internal] load build context                                                                          0.0s
- => => transferring context: 302B                                                                          0.0s
- => CACHED [2/4] WORKDIR /root                                                                             0.0s
- => [3/4] COPY ENTRYPOINT.sh /                                                                             0.0s
- => [4/4] RUN apt-get update && apt-get install -y --no-install-recommends     curl     dnsutils     ifu  14.0s
- => exporting to image                                                                                     0.2s 
- => => exporting layers                                                                                    0.2s 
- => => writing image sha256:f37e6d55786b490200e240473dc57a9fd7ec6fc855d25bb697eb9953dc2b3f97               0.0s 
- => => naming to docker.io/quanghong/mininet:ubuntu-22.04                                                  0.0s 
-ubuntu@ubuntu:~/docker-mininet/ubuntu-22.04$ docker compose run --rm mininet
-WARN[0000] /home/ubuntu/docker-mininet/ubuntu-22.04/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
-WARN[0000] Found orphan containers ([ubuntu-2204-mininet-run-ecd9a71770d4]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up. 
- * /etc/openvswitch/conf.db does not exist
- * Creating empty database /etc/openvswitch/conf.db
- * Starting ovsdb-server
- * Configuring Open vSwitch system IDs
- * Starting ovs-vswitchd
- * Enabling remote OVSDB managers
-ovsdb-server is running with pid 49
-ovs-vswitchd is running with pid 65
-root@dca30c46790c:~# 
+```bash
+docker build --file Dockerfile --tag quanghong/mininet:ubuntu-22.04 . &> build.log
+```
+
 root@dca30c46790c:~# mn --switch ovsbr --test pingall
 *** Error setting resource limits. Mininet's performance may be affected.
 *** Creating network
